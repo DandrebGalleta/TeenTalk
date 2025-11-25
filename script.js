@@ -48,3 +48,10 @@ joinBtn.addEventListener('click', () => {
     });
   }, 600);
 });
+
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.navbar ul');
+
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
+});

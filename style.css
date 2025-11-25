@@ -103,6 +103,44 @@ body {
   color: white;
 }
 
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: black;
+  border-radius: 2px;
+}
+
+@media (max-width: 500px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    width: 200px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  }
+
+  .navbar ul.show {
+    display: flex;
+  }
+}
+
 
 .logo-box {
   display: flex;

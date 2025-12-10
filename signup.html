@@ -6,6 +6,10 @@
   <title>Sign Up - TeenTalk</title>
   <link rel="stylesheet" href="feed.css">
   <link rel="stylesheet" href="auth.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
 </head>
 <body>
 
@@ -48,7 +52,7 @@
   const signupForm = document.getElementById('signupForm');
 
   signupForm.addEventListener('submit', (e) => {
-    e.preventDefault(); // Stop page from refreshing
+    e.preventDefault();
 
     const username = document.getElementById('s-username').value;
     const password = document.getElementById('s-password').value;
@@ -59,11 +63,9 @@
       return;
     }
 
-    // Save user data to Local Storage (The Browser's memory)
-    // In a real app, this would go to a secure database.
     const user = {
       username: username,
-      password: password // Note: We never save real passwords like this in production!
+      password: password
     };
 
     localStorage.setItem('currentUser', JSON.stringify(user));

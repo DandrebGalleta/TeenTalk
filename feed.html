@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="feed.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>TeenTalk Feed</title>
+</head>
+<body>
+
+<header class="navbar">
+    
+    <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="nav-left">
+        <div class="brand-logo-container"> 
+            <img src="images/logo.png" class="logo">
+            <span class="brand-text-nav">TeenTalk</span>
+        </div>
+
+        <div class="search-wrapper">
+            <span class="material-icons icon search-icon">search</span>
+            <input type="text" placeholder="Search...">
+            <span class="material-icons icon mic-icon">mic</span>
+        </div>
+        
+        <nav class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Resources & Help</a>
+            <a href="#">Tags</a>
+        </nav>
+    </div>
+
+    <div class="nav-right">
+        <div class="profile-box single-circle" id="profileDropdownTrigger">
+            <img src="images/pfp.png" class="profile-img">
+            <div class="mood">😊</div>
+        </div>
+
+        <div class="profile-menu" id="profileMenu">
+            <div class="menu-header">
+                <img src="images/pfp.png" class="profile-img-lg">
+                <span class="username">Username</span>
+            </div>
+
+            <div class="mood-rater-section">
+                <p>How are you feeling?</p>
+                <div class="mood-emojis">
+                    <span class="mood-option active">😊</span>
+                    <span class="mood-option">😐</span>
+                    <span class="mood-option">😟</span>
+                    <span class="mood-option">😠</span>
+                    <span class="mood-option">😭</span>
+                    <span class="mood-option plus">+</span>
+                </div>
+            </div>
+
+            <a href="#">Profile Settings</a>
+            <a href="#">Saved Posts</a>
+            <a href="#">Report/Safety Center</a>
+            <a href="#" class="logout">Logout</a>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#">Home</a>
+            <a href="#">Resources & Help</a>
+            <a href="#">Tags</a>
+            <div class="divider-mobile"></div>
+            <a href="#">Profile Settings</a>
+            <a href="#" class="logout">Logout</a>
+        </div>
+    </div>
+</header>
+
+<main class="layout">
+
+    <aside class="left">
+
+        <section class="box">
+            <h3>Daily Challenges</h3>
+            <div class="challenge-list" id="challenge-list">
+                <div class="challenge">
+                    <span>Loading Challenges...</span>
+                    <span class="challenge-progress">0/1</span>
+                </div>
+            </div>
+            <div class="challenge-actions">
+                <a href="#" class="refresh-btn" id="refresh-challenges-btn">Refresh</a>
+                <span class="refresh-count" id="refresh-count">3/3</span>
+            </div>
+        </section>
+
+        <section class="box">
+            <h3>Join Groups</h3>
+            <button class="create-group-btn" data-target="group-page">+ Create Group</button>
+            <div class="group-list">
+                <p class="empty" id="emptyGroupMessage">No groups available yet.</p>
+                </div>
+        </section>
+
+        <section class="box">
+            <h3>Support Others</h3>
+            <p class="empty">No current people at the moment.</p>
+        </section>
+
+    </aside>
+
+    <section class="center">
+
+        <div class="start-discussion">
+            <img src="images/pfp.png" class="pfp-sm" alt="profile">
+            <textarea placeholder="Start a new discussion..."></textarea>
+            <button class="post-btn" id="main-post-btn">
+                <span class="material-icons send-icon">send</span>
+            </button>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="feed-content" id="feedContent">
+             <div class="no-posts">
+                 <p>There are no Posts yet.</p>
+                 <p class="sub-text">Be the first to start a discussion!</p>
+             </div>
+        </div>
+
+    </section>
+
+    <aside class="right">
+
+        <section class="box">
+            <h3>Your Peers</h3>
+            <p class="empty">Peers: 0</p>
+        </section>
+
+        <section class="box">
+            <h3>Peers Recommendation</h3>
+            <p class="empty">No peers to recommend yet.</p>
+        </section>
+
+    </aside>
+
+</main>
+
+<script src="feed.js"></script>
+</body>
+</html>

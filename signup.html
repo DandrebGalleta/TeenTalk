@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - TeenTalk</title>
+  <link rel="stylesheet" href="feed.css">
+  <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+
+  <div class="auth-container">
+    <div class="auth-overlay"></div>
+    
+    <div class="auth-box">
+      <div class="auth-header">
+        <img src="images/logo.png" alt="TeenTalk Logo" class="auth-logo">
+        <h2>Join the Squad</h2>
+        <p>Create a safe space for yourself.</p>
+      </div>
+
+      <form class="auth-form" id="signupForm">
+  
+  <div class="input-group">
+    <label>Username</label>
+    <input type="text" id="s-username" placeholder="Pick a cool username" required>
+  </div>
+
+  <div class="input-group">
+    <label>Email Address</label>
+    <input type="email" id="s-email" placeholder="name@example.com" required>
+  </div>
+
+  <div class="input-group">
+    <label>Password</label>
+    <input type="password" id="s-password" placeholder="Create a strong password" required>
+  </div>
+
+  <div class="input-group">
+    <label>Confirm Password</label>
+    <input type="password" id="s-confirm" placeholder="Repeat password" required>
+  </div>
+
+  <button type="submit" class="btn-fill auth-btn">Sign Up</button>
+</form>
+
+<script>
+  const signupForm = document.getElementById('signupForm');
+
+  signupForm.addEventListener('submit', (e) => {
+    e.preventDefault(); // Stop page from refreshing
+
+    const username = document.getElementById('s-username').value;
+    const password = document.getElementById('s-password').value;
+    const confirm = document.getElementById('s-confirm').value;
+
+    if(password !== confirm) {
+      alert("Passwords do not match!");
+      return;
+    }
+
+    // Save user data to Local Storage (The Browser's memory)
+    // In a real app, this would go to a secure database.
+    const user = {
+      username: username,
+      password: password // Note: We never save real passwords like this in production!
+    };
+
+    localStorage.setItem('currentUser', JSON.stringify(user));
+
+    alert("Account created! Redirecting to login...");
+    window.location.href = "login.html";
+  });
+</script>
+
+</body>
+</html>

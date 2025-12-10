@@ -6,6 +6,10 @@
   <title>Login - TeenTalk</title>
   <link rel="stylesheet" href="feed.css"> 
   <link rel="stylesheet" href="auth.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
 </head>
 <body>
 
@@ -45,19 +49,16 @@
   const loginForm = document.getElementById('loginForm');
 
   loginForm.addEventListener('submit', (e) => {
-    e.preventDefault(); // Stop page from refreshing
+    e.preventDefault();
 
     const inputUser = document.getElementById('l-username').value;
     const inputPass = document.getElementById('l-password').value;
 
-    // Retrieve the stored user
     const storedUser = JSON.parse(localStorage.getItem('currentUser'));
 
     if (storedUser && inputUser === storedUser.username && inputPass === storedUser.password) {
-      // Login Success
       window.location.href = "feed.html";
     } else {
-      // Login Failed
       alert("Invalid username or password");
     }
   });
